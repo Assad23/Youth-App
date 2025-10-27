@@ -1,0 +1,129 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav.nav-bar {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--nav-bg);
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+nav.nav-bar a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+nav.nav-bar button {
+  margin-left: auto;
+}
+
+.container {
+  padding: 1rem;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --nav-bg: #e0e0e0;
+  --link-color: #0070f3;
+  --card-bg: #f7f7f7;
+  --border-color: #dddddd;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-bg: #222222;
+  --link-color: #90caf9;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Highlight event days on calendar */
+.react-calendar .event-day {
+  background-color: rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+}
+
+/* Customize react-calendar appearance to match theme */
+.react-calendar {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.react-calendar__tile {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--link-color);
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+form input, form textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--link-color);
+  color: white;
+  cursor: pointer;
+}
+
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
